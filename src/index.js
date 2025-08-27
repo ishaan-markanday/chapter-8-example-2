@@ -2,6 +2,9 @@ const express = require("express");
 const fs = require("fs");
 
 const app = express();
+process.env.PORT = 3000;
+const PORT = process.env.PORT;
+
 
 //
 // Throws an error if the PORT environment variable is missing.
@@ -13,7 +16,7 @@ if (!process.env.PORT) {
 //
 // Extracts the PORT environment variable.
 //
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT || 3000;
 
 //
 // HTTP GET route we can use to check if the service is handling requests.
