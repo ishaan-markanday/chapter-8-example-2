@@ -12,9 +12,6 @@ on:
   # Allows deployment to be invoked manually through the GitHub Actions user interface.
   #
   workflow_dispatch: 
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
   
 jobs:
   build:
@@ -33,4 +30,8 @@ jobs:
         cache: 'npm'
 
     - run: npm ci
-    - run: npm test
+    
+    - name: Run tests
+      run: npm test
+      env:
+        PORT: 3000
